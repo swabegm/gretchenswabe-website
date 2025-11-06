@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gretchen Swabe</title>
+
+  <!-- Import Playfair Display + Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== GENERAL RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background-color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== HEADER SECTION ===== */
+    header {
+      background-color: #929BC8; /* brand color */
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+      position: relative;
+    }
+
+    /* Small initials logo top-left */
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      border: 2px solid #000;
+      padding: 0.3rem 0.5rem;
+      font-weight: bold;
+      font-family: 'Source Sans Pro', sans-serif;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: absolute;
+      top: 25px;
+      right: 30px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover {
+      border-bottom: 1px solid #000;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .tagline {
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #111;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    section {
+      padding: 3rem 2rem;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+/* ===== AUDIO ICON (inline pronunciation button) ===== */
+    .audio-icon {
+        background: none;
+        border: none;
+        font-size: 1.1rem;
+        text-align: center;
+        cursor: pointer;
+        vertical-align: middle;
+        color: #444;
+        transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .audio-icon:hover {
+        color: #CD5C5C; /* subtle brand accent color */
+        transform: scale(1.15);
+    }
+
+    .audio-icon:focus {
+        outline: none;
+        color: #929BC8;
+    }
+
+        
+    /* ===== CONTACT SECTION ===== */
+    #contact {
+      background-color: #929BC8;
+      border-top: 1px solid #ddd;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+
+    #contact h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #000;
+    }
+
+    #contact p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #000000;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+      background: #fff;
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      border: 2px solid #CD5C5C;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: opacity 0.5s ease;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #333;
+      font-size: 1rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      display: block;
+      padding: 0.8rem 1rem;
+      margin-bottom: 1.5rem;
+      border: 1.5px solid #ddd;
+      border-radius: 10px;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1rem;
+      color: #333;
+      transition: all 0.3s ease;
+      background-color: #fffef9;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #999;
+      font-style: italic;
+    }
+
+    /* Highlight when active */
+    input:focus,
+    textarea:focus {
+      border-color: #929BC8;
+      outline: none;
+      background-color: #fff0fa;
+      box-shadow: 0 0 0 4px rgba(146,155,200,0.15);
+    }
+
+    button {
+      background-color: #CD5C5C;
+      color: #000;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, transform 0.1s ease;
+      display: block;
+      margin: 0 auto;
+    }
+
+    button:hover {
+      background-color: #E7F3FE;
+      transform: scale(1.03);
+    }
+
+    /* ===== THANK YOU MESSAGE ===== */
+    #thank-you {
+      display: none;
+      opacity: 0;
+      margin-top: 2rem;
+      background-color: #fff3cd;
+      border: 1px solid #ffeeba;
+      color: #856404;
+      padding: 1rem;
+      border-radius: 10px;
+      font-size: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: opacity 1s ease-in-out;
+    }
+
+    :target#thank-you {
+      display: block;
+      opacity: 1;
+    }
+
+    :target form {
+      opacity: 0.3;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      padding: 2rem 0;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== HEADER AREA ===== -->
+  <header>
+    <div class="logo">Gretchen M Swabe</div>
+
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#books">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <p class="tagline">I love data.</p>
+    <h1 class="name">Data. Science.</h1>
+
+    <img src="pgh_Skyline.jpg" alt="Black and white image of the Pittsburgh skyline" class="hero-image" />
+  </header>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about">
+    <p>
+      I'm Gretchen Swabe, a Pittsburgh-based data scientist with a background in Epidemiology. <br>
+      Hear how to pronounce my last name:
+      <button class="audio-icon" onclick="playPronunciation()" aria-label="Hear pronunciation">🔊
+      </button>
+        <audio id="nameAudio" src="How_to_pronounce_Swabe.mp3"></audio> <br><br>
+      I want to add more to this section.
+    </p>
+  </section>
+  <!-- ===== PROJECTS SECTION ===== -->
+<section id="projects">
+  <h2>Projects</h2>
+  <p>Here are a few examples of my work. Select a project to learn more:</p>
+
+  <div class="project-dropdown">
+    <select id="projectSelect" onchange="showProjectDetails()">
+      <option value="">-- Select a Project --</option>
+      <option value="project1">Project 1</option>
+      <option value="project2">Project 2</option>
+      <option value="project3">Project 3</option>
+    </select>
+  </div>
+
+  <div id="projectDetails" class="project-details">
+    <p>Select a project to see its description.</p>
+  </div>
+</section>
+
+<script>
+  function showProjectDetails() {
+    const project = document.getElementById("projectSelect").value;
+    const details = document.getElementById("projectDetails");
+
+    let content = "";
+    switch (project) {
+      case "project1":
+        content = "<h3>Project 1</h3><p>This is a placeholder description for Project 1. You can replace it with your real project summary.</p>";
+        break;
+      case "project2":
+        content = "<h3>Project 2</h3><p>This is a placeholder description for Project 2. You can update this section with more details and visuals later.</p>";
+        break;
+      case "project3":
+        content = "<h3>Project 3</h3><p>Another example of a project entry. Use this area to highlight your impact or methods.</p>";
+        break;
+      default:
+        content = "<p>Select a project to see its description.</p>";
+    }
+
+    details.innerHTML = content;
+  }
+</script>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>If you'd like to work with me or just say hello, fill out the form below. <br>
+      or email me at <a href="mailto:swabegm@gmail.com">swabegm@gmail.com</a>.</p>
+
+    <!-- Connected to Formspree -->
+    <form action="https://formspree.io/f/manlrqnd" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="_replyto" placeholder="Your email address" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+      <!-- Redirect to #thank-you on submit -->
+      <input type="hidden" name="_next" value="#thank-you">
+    </form>
+
+    <!-- Thank You message -->
+    <div id="thank-you">
+      <p>Thank you for reaching out. I'll be in touch!</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    © 2025 Gretchen Swabe
+  </footer>
+
+  <script>
+  function playPronunciation() {
+    const audio = document.getElementById("nameAudio");
+    audio.play();
+  }
+</script>
+
+</body>
+</html>
