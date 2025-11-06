@@ -88,7 +88,7 @@
 
     .hero-image {
       width: 100%;
-      max-height: 400px;
+      max-height: 1000px;
       object-fit: cover;
       display: block;
     }
@@ -264,10 +264,8 @@
       </ul>
     </nav>
 
-    <p class="tagline">I love data.</p>
-    <h1 class="name">Data. Science.</h1>
-
-    <img src="pgh_Skyline.jpg" alt="Black and white image of the Pittsburgh skyline" class="hero-image" />
+    <p class="tagline"> </p>
+    <h1 class="name">Data. Science. Running.</h1>
   </header>
 
   <!-- ===== ABOUT SECTION ===== -->
@@ -291,7 +289,7 @@
       <option value="">-- Select a Project --</option>
       <option value="project1">Project 1</option>
       <option value="project2">Project 2</option>
-      <option value="project3">Project 3</option>
+      <option value="project3">Running distance</option>
     </select>
   </div>
 
@@ -314,8 +312,11 @@
         content = "<h3>Project 2</h3><p>This is a placeholder description for Project 2. You can update this section with more details and visuals later.</p>";
         break;
       case "project3":
-        content = "<h3>Project 3</h3><p>Another example of a project entry. Use this area to highlight your impact or methods.</p>";
-        break;
+       content = `<h3>A silly little chart that means a lot to me</h3><p> I love running and have been logging my runs on Strava since 2017. To demonstrate my quant skills and show a little bit of my own personality, I downloaded the data and decided to display the distribution of my run length for each year.</p>
+        <img src="distance_run.png" alt="Histograms showing the distribution of run distance in kilometers by year from 2017-2025." class="hero-image"/>
+        `;
+
+         break;
       default:
         content = "<p>Select a project to see its description.</p>";
     }
