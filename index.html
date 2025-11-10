@@ -294,8 +294,8 @@
   <div class="project-dropdown">
     <select id="projectSelect" onchange="showProjectDetails()">
       <option value="">-- Select a Project --</option>
-      <option value="project1">Project 1</option>
-      <option value="project2">Project 2</option>
+      <option value="project1">America's Military and Veteran Caregivers: Hidden Heroes Emerging from the Shadows</option>
+      <option value="project2">CAHPS for MIPS</option>
       <option value="project3">Running distance</option>
     </select>
   </div>
@@ -310,13 +310,19 @@
     const project = document.getElementById("projectSelect").value;
     const details = document.getElementById("projectDetails");
 
+
+
+    
     let content = "";
     switch (project) {
       case "project1":
-        content = "<h3>Project 1</h3><p>This is a placeholder description for Project 1. You can replace it with your real project summary.</p>";
+        content = `<h3>America's Military and Veteran Caregivers</h3><p> I used survey data to quantify the number of caregivers and non-caregivers in the United States and compare socio-economic characteristics between groups. You can read the summary or the full report by clicking one of the links below </p>
+        <button class="report_summary" onclick="openSummary()">📄 View Summary</button> <br> <br>        
+        <button class="full_report" onclick="openFullReport()">📄 View Full Report</button> <br> <br> ';
+        `;
         break;
       case "project2":
-        content = "<h3>Project 2</h3><p>This is a placeholder description for Project 2. You can update this section with more details and visuals later.</p>";
+        content = "<h3>CAHPS for MIPS</h3><p>This is a placeholder description.</p>";
         break;
       case "project3":
        content = `<h3>A silly little chart that means a lot to me</h3><p> I love running and have been logging my runs on Strava since 2017. To demonstrate my quant skills and show a little bit of my own personality, I downloaded the data and decided to display the distribution of my run length for each year.</p>
@@ -375,6 +381,14 @@
 function openResume() {
   // Opens your PDF in a new tab (recommended for GitHub Pages)
   window.open('Swabe resume 2025.pdf', '_blank');
+}
+function openSummary() {
+  // Opens your PDF in a new tab (recommended for GitHub Pages)
+  window.open("America's Military and Veteran Caregivers_ Hidden Heroes Emerging from the Shadows _ RAND.html", '_blank');
+}
+function openFullReport() {
+  // Opens your PDF in a new tab (recommended for GitHub Pages)
+  window.open('Hidden_heroes_report.pdf', '_blank');
 }
 </script>
 </body>
