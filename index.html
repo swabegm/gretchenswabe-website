@@ -259,7 +259,8 @@
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#books">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -269,14 +270,20 @@
   </header>
 
   <!-- ===== ABOUT SECTION ===== -->
-  <section id="about">
+  <section id="resume">
     <p>
-      I'm Gretchen Swabe, a Pittsburgh-based data scientist with a background in Epidemiology. <br>
+      I'm Gretchen Swabe, a Pittsburgh-based data scientist with a background in Epidemiology. I have 6 years of experience working with data to answer research questions that span medication adherence and access to care, geospatial analyses, and complex survey data.
+      I have worked with clients from government entities such as the Centers for Medicare and Medicaid Services (CMS) and the National Institutes of Aging, as well as industry clients such as Gallup and the Elizabeth Dole Foundation.  <br>
+      You can view or download my full resume below. <br>
+      <section id="resume">
+      <h2>Resume</h2>
+      <button class="resume-button" onclick="openResume()">📄 View Resume</button> <br> <br>
+    </p>
+     <p>
       Hear how to pronounce my last name:
       <button class="audio-icon" onclick="playPronunciation()" aria-label="Hear pronunciation">🔊
       </button>
-        <audio id="nameAudio" src="How_to_pronounce_Swabe.mp3"></audio> <br><br>
-      I want to add more to this section.
+        <audio id="nameAudio" src="How_to_pronounce_Swabe.mp3"></audio>
     </p>
   </section>
   <!-- ===== PROJECTS SECTION ===== -->
@@ -364,6 +371,11 @@
     audio.play();
   }
 </script>
-
+<script>
+function openResume() {
+  // Opens your PDF in a new tab (recommended for GitHub Pages)
+  window.open('Swabe resume 2025.pdf', '_blank');
+}
+</script>
 </body>
 </html>
