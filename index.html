@@ -253,11 +253,10 @@
 <body>
   <!-- ===== HEADER AREA ===== -->
   <header>
-    <div class="logo">Gretchen M Swabe</div>
+    <div class="logo">Gretchen M Swabe, MS</div>
 
     <nav>
       <ul>
-        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#resume">Resume</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -309,9 +308,6 @@
   function showProjectDetails() {
     const project = document.getElementById("projectSelect").value;
     const details = document.getElementById("projectDetails");
-
-
-
     
     let content = "";
     switch (project) {
@@ -322,7 +318,7 @@
         `;
         break;
       case "project2":
-        content = "<h3>CAHPS for MIPS</h3><p>This is a placeholder description.</p>";
+        content = "<h3>CAHPS for MIPS</h3><p> Coming soon </p>";
         break;
       case "project3":
        content = `<h3>A silly little chart that means a lot to me</h3><p> I love running and have been logging my runs on Strava since 2017. To demonstrate my quant skills and show a little bit of my own personality, I downloaded the data and decided to display the distribution of my run length for each year.</p>
@@ -371,20 +367,18 @@
     © 2025 Gretchen Swabe
   </footer>
 
-  <script>
-  function playPronunciation() {
+ <script>
+ function playPronunciation() {
     const audio = document.getElementById("nameAudio");
     audio.play();
-  }
-</script>
-<script>
+}
 function openResume() {
   // Opens your PDF in a new tab (recommended for GitHub Pages)
   window.open('Swabe resume 2025.pdf', '_blank');
 }
 function openSummary() {
   // Opens your PDF in a new tab (recommended for GitHub Pages)
-  window.open("America's Military and Veteran Caregivers_ Hidden Heroes Emerging from the Shadows _ RAND.html", '_blank');
+  window.open("https://www.rand.org/pubs/research_reports/RRA3212-1.html", '_blank');
 }
 function openFullReport() {
   // Opens your PDF in a new tab (recommended for GitHub Pages)
