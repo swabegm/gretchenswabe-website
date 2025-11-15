@@ -123,6 +123,86 @@
         color: #929BC8;
     }
 
+  /* ===== PROJECTS FORMATTING ===== */
+ #projects {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  #projects h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #222;
+  }
+
+  #projects p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #444;
+  }
+
+  /* Dropdown container */
+  .project-dropdown {
+    width: 60%;              /* <--- adjust width here */
+    max-width: 400px;        /* <--- keeps it a clean narrow size */
+    margin: 0 auto 2rem;
+  }
+
+  /* Dropdown styling */
+  .project-dropdown select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 2px solid #929BC8;
+    background: #fffef9;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  /* Hover and focus effects */
+  .project-dropdown select:hover,
+  .project-dropdown select:focus {
+    border-color: #CD5C5C;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(146,155,200,0.15);
+  }
+
+  /* Project details box */
+  .project-details {
+    margin-top: 2rem;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    border: 1.5px solid #ddd;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  .project-details h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Enlarge project image, but keep it contained */
+  .project-details img {
+    display: block;
+    width: 100%;
+    max-width: 500px;   /* <--- adjust size of embedded image */
+    border-radius: 10px;
+    margin: 1.5rem auto;
+    cursor: pointer;
+  }
         
     /* ===== CONTACT SECTION ===== */
     #contact {
@@ -312,7 +392,7 @@
       case "project1":
         content = `<h3>America's Military and Veteran Caregivers</h3><p> I used survey data to quantify the number of caregivers and non-caregivers in the United States and compare socio-economic characteristics between groups. You can read the summary or the full report by clicking one of the links below </p>
         <button class="report_summary" onclick="openSummary()">📄 View Summary</button> <br> <br>        
-        <button class="full_report" onclick="openFullReport()">📄 View Full Report</button> <br> <br> ';
+        <button class="full_report" onclick="openFullReport()">📄 View Full Report</button> <br> <br>
         `;
         break;
       case "project2":
