@@ -36,19 +36,6 @@
       position: relative;
     }
 
-    /* Small initials logo top-left */
-    .logo {
-      position: absolute;
-      top: 20px;
-      left: 30px;
-      border: 2px solid #000;
-      padding: 0.3rem 0.5rem;
-      font-weight: bold;
-      font-family: 'Source Sans Pro', sans-serif;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 5px;
-    }
-
     /* ===== NAVIGATION ===== */
     nav {
       position: absolute;
@@ -317,10 +304,6 @@
       opacity: 1;
     }
 
-    :target form {
-      opacity: 0.3;
-    }
-
     footer {
       text-align: center;
       font-size: 0.8rem;
@@ -370,11 +353,12 @@
 
   <div class="project-dropdown">
     <select id="projectSelect" onchange="showProjectDetails()">
-      <option value="">-- Select a Project --</option>
+
       <option value="project1">America's Military and Veteran Caregivers: Hidden Heroes Emerging from the Shadows</option>
       <option value="project2">CAHPS for MIPS</option>
       <option value="project3">Running distance</option>
     </select>
+    
   </div>
 
   <div id="projectDetails" class="project-details">
@@ -410,6 +394,9 @@
 
     details.innerHTML = content;
   }
+  window.onload = function() {
+  showProjectDetails();
+};
 </script>
 
   <!-- ===== CONTACT SECTION ===== -->
@@ -442,7 +429,7 @@
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    © 2025 Gretchen Swabe
+    2025 Gretchen Swabe
   </footer>
 
  <script>
