@@ -73,13 +73,6 @@
       color: #111;
     }
 
-    .hero-image {
-      width: 100%;
-      max-height: 1000px;
-      object-fit: cover;
-      display: block;
-    }
-
     /* ===== ABOUT SECTION ===== */
     section {
       padding: 3rem 2rem;
@@ -190,7 +183,45 @@
     margin: 1.5rem auto;
     cursor: pointer;
   }
-        
+  /* Small image in the project section */
+  .click-zoom {
+      max-width: 800px;
+      width: 200%;
+      border-radius: 8px;
+      cursor: zoom-in;
+      transition: transform 0.2s ease;
+  }
+
+  .click-zoom:hover {
+      transform: scale(2.0);
+  }
+
+  /* Lightbox modal */
+  .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.85);
+  }
+
+  /* Image inside modal */
+  .lightbox-content {
+      max-width: 95vw;
+      max-height: 95vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+
+      /* THIS is the zoom effect */
+      transform: scale(1.8);   /* Increase for more zoom */
+      transform-origin: center center;
+  }
     /* ===== CONTACT SECTION ===== */
     #contact {
       background-color: #929BC8;
@@ -383,8 +414,8 @@
         content = "<h3>CAHPS for MIPS</h3><p> Coming soon </p>";
         break;
       case "project3":
-       content = `<h3>A silly little chart that means a lot to me</h3><p> I love running and have been logging my runs on Strava since 2017. To demonstrate my quant skills and show a little bit of my own personality, I downloaded the data and decided to display the distribution of my run length for each year.</p>
-        <img src="distance_run.png" alt="Histograms showing the distribution of run distance in kilometers by year from 2017-2025." class="hero-image"/>
+       content = `<h3>A hobby project</h3><p> I love running and have been logging my runs on Strava since 2017. I downloaded the data and decided to display the distribution of my run length for each year.</p>
+        <img src="distance_run.png" alt="Histograms showing the distribution of run distance in kilometers by year from 2017-2025." class="click-zoom" />
         `;
 
          break;
@@ -449,6 +480,34 @@ function openFullReport() {
   // Opens your PDF in a new tab (recommended for GitHub Pages)
   window.open('Hidden_heroes_report.pdf', '_blank');
 }
+// Lightbox zoom functionality
+const modal = document.getElementById("lightboxModal");
+const modalImg = document.getElementById("lightboxImg");
+const closeBtn = document.querySelector(".lightbox-close");
+
+document.querySelectorAll(".click-zoom").forEach(img => {
+    img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+    });
+});
+
+closeBtn.onclick = () => {
+    modal.style.display = "none";
+};
+
+modal.onclick = (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+};
+
 </script>
+<!-- Lightbox Modal -->
+<div id="lightboxModal" class="lightbox-modal">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightboxImg">
+</div>
+
 </body>
 </html>
