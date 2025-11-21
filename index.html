@@ -126,9 +126,11 @@
 
   /* Dropdown container */
   .project-dropdown {
-    width: 60%;              /* <--- adjust width here */
+    width: 80%;              /* <--- adjust width here */
     max-width: 800px;        /* <--- keeps it a clean narrow size */
     margin: 0 auto 2rem;
+    word-wrap: break-word;
+      /* Enable text wrapping */
   }
 
   /* Dropdown styling */
@@ -143,6 +145,8 @@
     color: #333;
     cursor: pointer;
     transition: all 0.3s ease;
+    word-wrap: break-word;
+      /* Enable text wrapping */
   }
 
   /* Hover and focus effects */
@@ -167,9 +171,11 @@
   }
 
   .project-details h3 {
-    width: 800px;
+    width: 100%;
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
+    font-size: 1.8rem;    
+    word-wrap: break-word;
+      /* Enable text wrapping */
     margin-bottom: 0.5rem;
   }
 
@@ -381,7 +387,7 @@
   <h2>Projects</h2>
   <p>Here are a few examples of my work. Select a project to learn more:</p>
 
-  <div class="project-dropdown">
+  <div class="project-dropdown" > 
     <select id="projectSelect" onchange="showProjectDetails()">
 
       <option value="project1">America's Military and Veteran Caregivers: Hidden Heroes Emerging from the Shadows</option>
