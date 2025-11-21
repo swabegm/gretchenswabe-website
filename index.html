@@ -127,7 +127,7 @@
   /* Dropdown container */
   .project-dropdown {
     width: 60%;              /* <--- adjust width here */
-    max-width: 400px;        /* <--- keeps it a clean narrow size */
+    max-width: 800px;        /* <--- keeps it a clean narrow size */
     margin: 0 auto 2rem;
   }
 
@@ -159,9 +159,7 @@
     background: #fff;
     padding: 2rem;
     border-radius: 15px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 800px;
     text-align: left;
     border: 1.5px solid #ddd;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
@@ -169,6 +167,7 @@
   }
 
   .project-details h3 {
+    width: 800px;
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
@@ -178,7 +177,7 @@
   .project-details img {
     display: block;
     width: 100%;
-    max-width: 500px;   /* <--- adjust size of embedded image */
+    max-width: 800px;   /* <--- adjust size of embedded image */
     border-radius: 10px;
     margin: 1.5rem auto;
     cursor: pointer;
@@ -411,16 +410,17 @@
         `;
         break;
       case "project2":
-        content = "<h3>CAHPS for MIPS</h3><p> Coming soon </p>";
+        content = `<h3>CAHPS for MIPS</h3><p> I worked on the Consumer Assessment of Healthcare Providers and Systems (CAHPS) during my tenure at RAND. The Merit-based Incentive Payment System (MIPS) survey is administered annually to Medicare recipients and aims to evaluate patient experience in 10 domains. My role was to select beneficiaries for the survey, clean and score reported survey data, and analyze data to support CMS's needs. Due to the sensitive nature of the material, these analyses were internal to CMS. I led analyses describing discrepancies in patient experience by demographics (age, gender, and race). Additionally, I reported on the efficacy of mandating that the survey be available in both English and Spanish. </p> 
+          <button onclick="openCAHPS()">📄 Read more about CAHPS for MIPS on CMS.gov</button> <br> <br>        
+        `;
         break;
       case "project3":
-       content = `<h3>A hobby project</h3><p> I love running and have been logging my runs on Strava since 2017. I downloaded the data and decided to display the distribution of my run length for each year.</p>
-        <img src="distance_run.png" alt="Histograms showing the distribution of run distance in kilometers by year from 2017-2025." class="click-zoom" />
+       content = `<h3>A hobby project</h3><p> I love running and have been logging my runs on Strava since 2017. I downloaded the data and built a shiny app to show various aspects of my running career to date.</p>
+            <iframe src="https://16s2p9-gretchen.shinyapps.io/strava_data/" width="900px" height="700px" frameborder="0"></iframe>
+            <button onclick="expandIframe()">View in fullscreen</button>
         `;
 
          break;
-      default:
-        content = "<p>Select a project to see its description.</p>";
     }
 
     details.innerHTML = content;
@@ -473,12 +473,16 @@ function openResume() {
   window.open('Swabe resume 2025.pdf', '_blank');
 }
 function openSummary() {
-  // Opens your PDF in a new tab (recommended for GitHub Pages)
+  // Opens link in a new tab (recommended for GitHub Pages)
   window.open("https://www.rand.org/pubs/research_reports/RRA3212-1.html", '_blank');
 }
 function openFullReport() {
   // Opens your PDF in a new tab (recommended for GitHub Pages)
   window.open('Hidden_heroes_report.pdf', '_blank');
+}
+function openCAHPS() {
+  // Opens link in a new tab (recommended for GitHub Pages)
+  window.open("https://www.cms.gov/data-research/research/consumer-assessment-healthcare-providers-systems/cahps-mips", '_blank');
 }
 // Lightbox zoom functionality
 const modal = document.getElementById("lightboxModal");
@@ -501,6 +505,9 @@ modal.onclick = (e) => {
         modal.style.display = "none";
     }
 };
+function expandIframe() {
+  window.open("https://16s2p9-gretchen.shinyapps.io/strava_data/", '_blank');
+}
 
 </script>
 <!-- Lightbox Modal -->
