@@ -392,6 +392,7 @@
 
       <option value="project1">America's Military and Veteran Caregivers: Hidden Heroes Emerging from the Shadows</option>
       <option value="project2">CAHPS for MIPS</option>
+      <option value="Optum">Optum analyses</option>
       <option value="project3">Running distance</option>
     </select>
     
@@ -416,14 +417,25 @@
         `;
         break;
       case "project2":
-        content = `<h3>CAHPS for MIPS</h3><p> I worked on the Consumer Assessment of Healthcare Providers and Systems (CAHPS) during my tenure at RAND. The Merit-based Incentive Payment System (MIPS) survey is administered annually to Medicare recipients and aims to evaluate patient experience in 10 domains. My role was to select beneficiaries for the survey, clean and score reported survey data, and analyze data to support CMS's needs. Due to the sensitive nature of the material, these analyses were internal to CMS. I led analyses describing discrepancies in patient experience by demographics (age, gender, and race). Additionally, I reported on the efficacy of mandating that the survey be available in both English and Spanish. </p> 
+        content = `<h3>Consumer Assessment of Healthcare Providers and Systems for Merit-based Incentive Payment System</h3><p> I worked on the Consumer Assessment of Healthcare Providers and Systems (CAHPS) during my tenure at RAND. The Merit-based Incentive Payment System (MIPS) survey is administered annually to Medicare recipients and aims to evaluate patient experience in 10 domains. My role was to select beneficiaries for the survey, clean and score reported survey data, and analyze data to support CMS's needs. Due to the sensitive nature of the material, these analyses were internal to CMS. I led analyses describing discrepancies in patient experience by demographics (age, gender, and race). Additionally, I reported on the efficacy of mandating that the survey be available in both English and Spanish. </p> 
           <button onclick="openCAHPS()">📄 Read more about CAHPS for MIPS on CMS.gov</button> <br> <br>        
         `;
         break;
+        case "Optum":
+        content = `<h3>Optum analyses</h3><p> While working as a data analyst at the University of Pittsburgh, I led analyses using Optum data, a private insurance claims database. My team and I analyzed socioeconomic factors and their relationship to health outcomes such as medication adherence, cardiac rehabilitation, and coronary angiography. Much of that work was published in journals that you can find linked below for additional details. </p> 
+          <button onclick="NSTEMI()">📄 Association of Race and Ethnicity on the Management of Acute Non-ST-Segment Elevation Myocardial Infarction </button> <br> 
+          <button onclick="Depr()">📄 Assessment of Depression and Adherence to Guideline-Directed Medical Therapies Following Percutaneous Coronary Intervention </button> <br> 
+          <button onclick="CardRehab()">📄 Racial and Ethnic Differences in Cardiac Rehabilitation Participation: Effect Modification by Household Income </button> <br>
+          <button onclick="PAH()">📄 Association Between Copayment and Adherence to Medications for Pulmonary Arterial Hypertension </button> <br>
+          <button onclick="SLE()">📄 Association of patient copayment and medication adherence in systemic lupus erythematosus </button> <br>
+          <button onclick="HFrEF()">📄 Relation of household income to access and adherence to combination sacubitril/valsartan in heart failure </button> <br> 
+        `;
+        break;
+
       case "project3":
        content = `<h3>A hobby project</h3><p> I love running and have been logging my runs on Strava since 2017. I downloaded the data and built a shiny app to show various aspects of my running career to date.</p>
-            <iframe src="https://16s2p9-gretchen.shinyapps.io/strava_data/" width="900px" height="700px" frameborder="0"></iframe>
-            <button onclick="expandIframe()">View in fullscreen</button>
+            <img src="distance_run.png" alt="Histograms showing the distribution of run distance in kilometers by year from 2017-2025."/>
+            <button onclick="expandIframe()">View more running data</button>
         `;
 
          break;
@@ -490,6 +502,26 @@ function openCAHPS() {
   // Opens link in a new tab (recommended for GitHub Pages)
   window.open("https://www.cms.gov/data-research/research/consumer-assessment-healthcare-providers-systems/cahps-mips", '_blank');
 }
+function NSTEMI() {
+  window.open('https://pmc.ncbi.nlm.nih.gov/articles/PMC9238643/','_blank');
+}
+function Depr() {
+  window.open('https://pmc.ncbi.nlm.nih.gov/articles/PMC9856464/','_blank');
+}
+function CardRehab() {
+  window.open('https://pmc.ncbi.nlm.nih.gov/articles/PMC9333381/','_blank');
+}
+function PAH() {
+  window.open('https://pmc.ncbi.nlm.nih.gov/articles/PMC9750087/','_blank');
+}
+function SLE() {
+  window.open('https://pmc.ncbi.nlm.nih.gov/articles/PMC10603349/','_blank');
+}
+function HFrEF() {
+  window.open('https://pmc.ncbi.nlm.nih.gov/articles/PMC9308667/','_blank');
+}
+
+
 // Lightbox zoom functionality
 const modal = document.getElementById("lightboxModal");
 const modalImg = document.getElementById("lightboxImg");
