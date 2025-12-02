@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gretchen Swabe</title>
-
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <!-- Import Playfair Display + Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
 
@@ -198,7 +199,7 @@
   }
 
   .click-zoom:hover {
-      transform: scale(2.0);
+      transform: scale(1.5);  /* Use to adjust scale of zoom when hovering */
   }
 
   /* Lightbox modal */
@@ -215,18 +216,6 @@
       background-color: rgba(0,0,0,0.85);
   }
 
-  /* Image inside modal */
-  .lightbox-content {
-      max-width: 95vw;
-      max-height: 95vh;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-
-      /* THIS is the zoom effect */
-      transform: scale(1.8);   /* Increase for more zoom */
-      transform-origin: center center;
-  }
     /* ===== CONTACT SECTION ===== */
     #contact {
       background-color: #929BC8;
@@ -434,7 +423,7 @@
 
       case "project3":
        content = `<h3>A hobby project</h3><p> I love running and have been logging my runs on Strava since 2017. I downloaded the data and built a shiny app to show various aspects of my running career to date.</p>
-            <img src="distance_run.png" alt="Histograms showing the distribution of run distance in kilometers by year from 2017-2025."/>
+            <img src="distance_run.png" alt="Histograms showing the distribution of run distance in kilometers by year from 2017-2025." class="click-zoom"/>
             <button onclick="expandIframe()">View more running data</button>
         `;
 
@@ -548,11 +537,6 @@ function expandIframe() {
 }
 
 </script>
-<!-- Lightbox Modal -->
-<div id="lightboxModal" class="lightbox-modal">
-    <span class="lightbox-close">&times;</span>
-    <img class="lightbox-content" id="lightboxImg">
-</div>
 
 </body>
 </html>
