@@ -45,6 +45,7 @@
       color: inherit;
     }
 
+    
     /* ===== HEADER SECTION ===== */
     header {
       background-color: #929BC8; /* brand color */
@@ -52,7 +53,7 @@
       padding: 3rem 1rem 1rem;
       position: relative;
     }
-
+ 
     /* ===== NAVIGATION ===== */
     nav {
       position: absolute;
@@ -90,13 +91,45 @@
       color: #111;
     }
 
-    /* ===== ABOUT SECTION ===== */
-    section {
-      padding: 1rem 1rem;
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
+    /* ===== ABOUT LAYOUT ===== */
+
+  .about-container {
+    display: flex;
+    flex-direction: column;   /* default = mobile stack */
+    align-items: center;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  #about {
+    text-align: left;
+  }
+
+  .about-image img {
+    width: 225px;
+    height: 225px;
+    border-radius: 30%;
+    object-fit: cover;
+  }
+
+  /* Desktop layout */
+  @media (min-width: 700px) {
+    .about-container {
+      flex-direction: row;   /* side-by-side */
+      align-items: center;
     }
+
+    #about {
+      flex: 1;
+    }
+
+    .about-image {
+      flex: 0 0 225px;
+    }
+  }
+
     
 /* ===== AUDIO ICON (inline pronunciation button) ===== */
     .audio-icon {
@@ -370,34 +403,22 @@
     <h1 class="name">Gretchen Swabe, MS</h1>
   </header>
   
-<div style="display: flex; align-items: center; max-width: 750px; margin: 0 auto; padding: 1rem; ">
-  <!-- need to render differently on desktop vs mobile: -->
-          <style media="all">
-        .mobile-display{display:none}
-        .desktop-display{display:block}
-        @media (max-width:800px){
-        . desktop-display {display:none}
-        . mobile-display {display:block}
-        }
-        </style>
-
-  <div style="flex: 1; text-align: left;">
-    <section id="about">
-      <p>I'm Gretchen Swabe, a Pittsburgh-based data scientist with a background in Epidemiology. I have 6 years of experience working with data to answer research questions that span medication adherence and access to care, geospatial analyses, and complex survey data.
+<div class="about-container">
+  <section id="about">
+    <p>
+      I'm Gretchen Swabe, a Pittsburgh-based data scientist with a background in Epidemiology. I have 6 years of experience working with data to answer research questions that span medication adherence and access to care, geospatial analyses, and complex survey data.
         I have worked with clients from government entities such as the Centers for Medicare and Medicaid Services (CMS) and the National Institutes of Aging, as well as industry clients such as Gallup and the Elizabeth Dole Foundation. <br>
-      </p>
-    </section>
-    </div>
-  <div class="desktop-display" style="flex: 0 0 225px;">
-    <img src="G_in_Granada.jpg" alt="Gretchen Swabe" style="width: 225px; height: 225px; border-radius: 30%; object-fit: cover;">
+    </p>
+  </section>
+
+  <div class="about-image">
+    <img src="G_in_Granada.jpg" alt="A casual photo of Gretchen">
   </div>
 </div>
 
 <!-- ===== Resume and name section ===== -->
-<div style="display: flex; align-items: center; max-width: 750px; margin: 0 auto; ">
-  <div class="mobile-display" style="flex: 0 0 225px; ">
-      <img src="G_in_Granada.jpg" alt="Gretchen Swabe" style="width: 225px; height: 225px; border-radius: 30%; object-fit: cover;">
-  </div>
+<div style="text-align: center; margin-top: 10px; margin-bottom: 0px;">
+
       <section id="resume">
         <p> You can view or download my full resume below. </p>
         <button class="resume-button" onclick="openResume()">📄 View Resume</button> <br> 
