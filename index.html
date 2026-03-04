@@ -113,6 +113,11 @@
     border-radius: 30%;
     object-fit: cover;
     pointer-events: none;
+      /* Safari scroll rendering fix */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
   }
 
   /* Desktop layout */
