@@ -92,7 +92,7 @@
 
     /* ===== ABOUT SECTION ===== */
     section {
-      padding: 3rem 2rem;
+      padding: 1rem 1rem;
       max-width: 800px;
       margin: auto;
       text-align: center;
@@ -369,24 +369,34 @@
     <p class="tagline"> </p>
     <h1 class="name">Gretchen Swabe, MS</h1>
   </header>
+  
+<div style="display: flex; align-items: center; max-width: 750px; margin: 0 auto; padding: 1rem; ">
+  <div style="flex: 1; text-align: left;">
+    <section id="about">
+      <p>I'm Gretchen Swabe, a Pittsburgh-based data scientist with a background in Epidemiology. I have 6 years of experience working with data to answer research questions that span medication adherence and access to care, geospatial analyses, and complex survey data.
+        I have worked with clients from government entities such as the Centers for Medicare and Medicaid Services (CMS) and the National Institutes of Aging, as well as industry clients such as Gallup and the Elizabeth Dole Foundation. <br>
+      </p>
+    </section>
+    </div>
+  <div style="flex: 0 0 225px; ">
+    <img src="G_in_Granada.jpg" alt="Gretchen Swabe" style="width: 225px; height: 225px; border-radius: 30%; object-fit: cover;">
+  </div>
+</div>
 
-  <!-- ===== ABOUT SECTION ===== -->
-  <section id="resume">
-    <p>
-      I'm Gretchen Swabe, a Pittsburgh-based data scientist with a background in Epidemiology. I have 6 years of experience working with data to answer research questions that span medication adherence and access to care, geospatial analyses, and complex survey data.
-      I have worked with clients from government entities such as the Centers for Medicare and Medicaid Services (CMS) and the National Institutes of Aging, as well as industry clients such as Gallup and the Elizabeth Dole Foundation.  <br>
-      You can view or download my full resume below. <br>
+<!-- ===== Resume and name section ===== -->
+<div style="display: flex; align-items: center; max-width: 750px; margin: 0 auto; ">
       <section id="resume">
-      <h2>Resume</h2>
-      <button class="resume-button" onclick="openResume()">📄 View Resume</button> <br> <br>
-    </p>
-     <p>
-      Hear how to pronounce my last name:
-      <button class="audio-icon" onclick="playPronunciation()" aria-label="Hear pronunciation">🔊
-      </button>
-        <audio id="nameAudio" src="How_to_pronounce_Swabe.mp3"></audio>
-    </p>
-  </section>
+        <p> You can view or download my full resume below. </p>
+        <button class="resume-button" onclick="openResume()">📄 View Resume</button> <br> 
+       <p>
+        Hear how to pronounce my last name:
+        <button class="audio-icon" onclick="playPronunciation()" aria-label="Hear pronunciation">🔊</button>
+          <audio id="nameAudio" src="How_to_pronounce_Swabe.mp3"></audio>
+      </p>
+    </section>
+</div>
+
+
   <!-- ===== PROJECTS SECTION ===== -->
 <section id="projects">
   <h2>Projects</h2>
@@ -483,7 +493,7 @@
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    2025 Gretchen Swabe
+    2026 Gretchen Swabe
   </footer>
 
  <script>
