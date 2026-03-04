@@ -97,7 +97,7 @@
       margin: auto;
       text-align: center;
     }
-
+    
 /* ===== AUDIO ICON (inline pronunciation button) ===== */
     .audio-icon {
         background: none;
@@ -371,6 +371,16 @@
   </header>
   
 <div style="display: flex; align-items: center; max-width: 750px; margin: 0 auto; padding: 1rem; ">
+  <!-- need to render differently on desktop vs mobile: -->
+          <style media="all">
+        .mobile-display{display:none}
+        .desktop-display{display:block}
+        @media (max-width:800px){
+        . desktop-display {display:none}
+        . mobile-display {display:block}
+        }
+        </style>
+
   <div style="flex: 1; text-align: left;">
     <section id="about">
       <p>I'm Gretchen Swabe, a Pittsburgh-based data scientist with a background in Epidemiology. I have 6 years of experience working with data to answer research questions that span medication adherence and access to care, geospatial analyses, and complex survey data.
@@ -378,9 +388,13 @@
       </p>
     </section>
     </div>
-  <div style="flex: 0 0 225px;  box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+  <div class="desktop-display" style="flex: 0 0 225px;">
     <img src="G_in_Granada.jpg" alt="Gretchen Swabe" style="width: 225px; height: 225px; border-radius: 30%; object-fit: cover;">
   </div>
+</div>
+
+<div class="mobile-display" style="flex: 0 0 225px; ">
+    <img src="G_in_Granada.jpg" alt="Gretchen Swabe" style="width: 225px; height: 225px; border-radius: 30%; object-fit: cover;">
 </div>
 
 <!-- ===== Resume and name section ===== -->
